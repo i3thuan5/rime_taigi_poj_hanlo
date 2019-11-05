@@ -203,7 +203,7 @@ Feature: Rime白話字漢羅輸入法方案ê候選詞規則
 
 
 
-
+  @skipscenario
   Scenario Outline: 21.任何拼音羅馬字（無tī字表內底mā ē-sái phah羅馬字）
     Given 21.Nā詞庫內底無「<jisu>」chit-ê字詞，拼音是「<phengim_with_space>」。
      When 21.輸入完整ê拼音字母（無空白）。
