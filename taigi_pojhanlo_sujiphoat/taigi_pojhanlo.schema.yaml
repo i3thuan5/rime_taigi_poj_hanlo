@@ -39,8 +39,8 @@ engine: # 輸入法iăn-jín
     - punctuator    # 標點符號處理器，將孤1-ê字元key直接對應到標點符號a̍h是文字
     - selector  # 候選字選字、換頁
     - navigator # sòa beh插入去ê位置
-#    - express_editor    # 編輯器，處理phah空格、enter key ē送去螢幕，處理bá-kuh key。
-    - fluid_editor    # 句式編輯器，用來做空格斷詞、用enter key送去螢幕ê【注音】、【語句流】等等輸入方案，替換 express_editor。Mā ē-sái寫做 fluency_editor。
+    - express_editor    # 編輯器，處理phah空格、enter key ē送去螢幕，處理bá-kuh key。
+#   - fluid_editor    # 句式編輯器，用來做空格斷詞、用enter key送去螢幕ê【注音】、【語句流】等等輸入方案，替換 express_editor。Mā ē-sái寫做 fluency_editor。
   
   segmentors:   # Hun段標記處理
     - ascii_segmentor   # 標記英文段落（譬喻tī英文模式），字母直接送去螢幕。
@@ -112,16 +112,22 @@ punctuator: # 設定標點符號表
 
 
 key_binder:
+  import_preset: default
   bindings:
     # 候選字換頁ê hotkey
-    - { when: composing, accept: Tab, send: Page_Down }
-    - { when: composing, accept: Shift+Tab, send: Page_Up }
-    - { when: composing, accept: bracketright, send: Page_Down }
-    - { when: composing, accept: bracketleft, send: Page_Up }
+    -  when: composing
+       accept: Tab
+       send: Page_Down
+
+    -  when: composing
+       accept: Shift+Tab
+       send: Page_Up
+
+    -  when: composing
+       accept: bracketright
+       send: Page_Down
+    
+    -  when: composing
+       accept: bracketleft
+       send: Page_Up
         
-        
-editor:
-  bindings:
-#    Return: commit_composition # 使用 express_editor ê時phah開
-    space: commit_composition # 使用 fluency_editor ê時phah開
-    Shift+Return: commit_raw_input # 上屏原始輸入
