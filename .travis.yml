@@ -1,0 +1,19 @@
+dist: bionic
+language: python
+python:
+- '3.7'
+services:
+  - docker
+env:
+  matrix:
+  - TOX_ENV=BDD
+  - TOX_ENV=flake8
+branches:
+  only:
+  - master
+install:
+- pip install tox
+script: 
+- tox -e $TOX_ENV
+
+

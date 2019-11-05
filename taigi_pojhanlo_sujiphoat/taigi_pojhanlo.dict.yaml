@@ -1,6 +1,7 @@
-﻿# Rime dictionary
+# Rime dictionary
 # encoding: utf-8
 
+---
 name: taigi_pojhanlo
 version: "1.0.0"
 sort: by_weight
