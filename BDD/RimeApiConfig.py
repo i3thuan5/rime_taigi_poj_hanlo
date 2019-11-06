@@ -4,8 +4,6 @@ import shutil
 import os
 from os.path import join
 
-original_path_docker = "."
-original_path_mac_os = "../taigi_pojhanlo_sujiphoat/"
 
 path_docker = "../BDD/build/"
 path_mac_os = "build/"
@@ -15,7 +13,7 @@ user_dict_filename = "taigi_pojhanlo.extended.dict.yaml"
 
 
 def prepare_config_files_for_bdd():
-    original_working_path = get_original_working_path()
+    original_working_path = get_yaml_path()
     working_path = get_working_path()
     os.makedirs(working_path, exist_ok=True)
     list_dir = os.listdir(working_path)
@@ -36,7 +34,7 @@ def prepare_config_files_for_bdd():
 
 
 def prepare_dict_file_for_bdd(dict_word_lines):
-    original_working_path = get_original_working_path()
+    original_working_path = get_yaml_path()
     working_path = get_working_path()
     dict_file_path = os.path.join(working_path, dict_filename)
     print("dict_file_path: ", dict_file_path)
@@ -64,7 +62,7 @@ def prepare_dict_file_for_bdd(dict_word_lines):
 
 
 def prepare_user_dict_file_for_bdd(dict_word_lines):
-    original_working_path = get_original_working_path()
+    original_working_path = get_yaml_path()
     working_path = get_working_path()
 
     dict_file_path = os.path.join(working_path, user_dict_filename)
@@ -122,14 +120,8 @@ def user_dict_contains_word(jisu, phengim_with_space):
     return found
 
 
-def get_original_working_path():
-    if Platform.docker in sys.platform:
-        return original_path_docker
-    elif Platform.mac_os in sys.platform:
-        return original_path_mac_os
-    else:
-        raise RuntimeError(
-            "Unsupported operating system: {}".format(sys.platform))
+def get_yaml_path():
+    return "../taigi_pojhanlo_sujiphoat/"
 
 
 def get_working_path():
