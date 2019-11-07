@@ -1,0 +1,11 @@
+Package: rime-taigi-poj-hanlo
+Source: rime-taigi-poj-hanlo
+Section: utils
+Priority: optional
+Version: 0.1
+Architecture: all
+Depends: fcitx-rime (>= 0.3.1)
+Maintainer: I-thuan Kho-ki <ithuan@ithuan.tw>
+Homepage: https://github.com/i3thuan5/rime_taigi_poj_hanlo
+Description: Taiwanese Peh-oe-ji Input Method Schema for Rime.
+ Rime的台語白話字漢羅輸入方案

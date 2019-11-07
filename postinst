@@ -1,0 +1,10 @@
+#!/bin/bash
+
+default_file=/usr/share/rime-data/default.yaml
+
+# Clear old setting
+sed -i "/- schema: taigi_pojhanlo/d"  ${default_file}
+
+# Add new setting
+sed -i "/schema_list:/a \ \ - schema: taigi_pojhanlo" ${default_file} 
+
